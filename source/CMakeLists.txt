@@ -21,11 +21,29 @@ include_directories(
 )
 
 set(
+	ENGINE_HEADERS
+	engine/core/Component.h
+	engine/core/CoreFactory.h
+	engine/core/GraphicCore.h
+	engine/core/IdManager.h
+	engine/core/Types.h
+	engine/core/UniqueId.h
+	engine/entity/Decor.h
+	engine/entity/Entity.h
+	engine/entity/Squad.h
+	engine/map/Cell.h
+	engine/map/Map.h
+)
+
+set(
 	ENGINE_SOURCES
 	engine/core/CoreFactory.cpp
 	engine/core/GraphicCore.cpp
 	engine/core/IdManager.cpp
+	engine/entity/Decor.cpp
 	engine/entity/Entity.cpp
+	engine/entity/Squad.cpp
+	engine/map/Cell.cpp
 	engine/map/Map.cpp
 )
 
@@ -35,7 +53,7 @@ set(
 	game/Game.cpp
 )
 
-add_library(engine-lib OBJECT ${ENGINE_INCLUDE_H} ${ENGINE_SOURCES})
+add_library(engine-lib OBJECT ${ENGINE_HEADERS} ${ENGINE_SOURCES})
 target_include_directories(engine-lib PUBLIC ${ENGINE_INCLUDE_H})
 
 add_executable(
