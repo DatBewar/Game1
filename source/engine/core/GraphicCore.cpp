@@ -1,20 +1,21 @@
 #include "GraphicCore.h"
 
-
-GraphicCore::GraphicCore(sf::RenderWindow *w) {
-	this->window = w;
-}
-
-
-GraphicCore::~GraphicCore() {
-}
+namespace engine {
+	GraphicCore::GraphicCore(sf::RenderWindow *w) {
+		this->window = w;
+	}
 
 
-/*void GraphicCore::drawPlayer(CPlayer *p) {
-	if (p->getSprite() != nullptr)
-		this->window->draw(*p->getSprite());
-}*/
+	GraphicCore::~GraphicCore() {
+	}
 
-void GraphicCore::draw(sf::Sprite *s) {
-  this->window->draw(*s);
+
+	/*void GraphicCore::drawPlayer(CPlayer *p) {
+		if (p->getSprite() != nullptr)
+			this->window->draw(*p->getSprite());
+	}*/
+
+	void GraphicCore::draw(sf::Sprite *s) {
+		this->window->draw(*s);
+	}
 }

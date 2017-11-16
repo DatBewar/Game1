@@ -9,18 +9,19 @@
 #include <SFML/Graphics.hpp>
 
 //#include "Player.h"
+namespace engine {
+	class GraphicCore {
+	public:
+		GraphicCore(sf::RenderWindow *w);
 
-class GraphicCore {
-public:
-	GraphicCore(sf::RenderWindow *w);
+		//void drawPlayer(CPlayer *p);
 
-	//void drawPlayer(CPlayer *p);
+		void draw(sf::Sprite *s);
 
-	void draw(sf::Sprite *s);
-
-	~GraphicCore();
-private:
-	sf::RenderWindow *window;
-};
+		~GraphicCore();
+	private:
+		sf::RenderWindow *window;
+	};
+}
 
 #endif

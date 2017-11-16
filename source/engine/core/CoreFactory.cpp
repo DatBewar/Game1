@@ -2,48 +2,53 @@
 
 #include <unordered_map>
 
-CoreFactory CoreFactory::m_instance = CoreFactory();
+using namespace entity;
+using namespace map;
 
-CoreFactory& CoreFactory::instance() {
-  return CoreFactory::m_instance;
-}
+namespace engine {
+	CoreFactory CoreFactory::m_instance = CoreFactory();
 
-CoreFactory::CoreFactory() {
-  this->factoryIdManagerEntity = new IdManager();
-  this->factoryIdManagerMap = new IdManager();
-}
+	CoreFactory& CoreFactory::instance() {
+		return CoreFactory::m_instance;
+	}
 
-IdManager& CoreFactory::getIdManagerEntity() {
-  return *(this->factoryIdManagerEntity);
-}
+	CoreFactory::CoreFactory() {
+		this->factoryIdManagerEntity = new IdManager();
+		this->factoryIdManagerMap = new IdManager();
+	}
 
-IdManager& CoreFactory::getIdManagerMap() {
-  return *(this->factoryIdManagerMap);
-}
+	IdManager& CoreFactory::getIdManagerEntity() {
+		return *(this->factoryIdManagerEntity);
+	}
 
-Entity& CoreFactory::getNewEntity() {
-  Entity * newEntity = new Entity(
-    this->factoryIdManagerEntity->getNewId()
-  );
-  this->entities.insert(std::make_pair(newEntity->getId(), newEntity));
-  return *newEntity;
-}
+	IdManager& CoreFactory::getIdManagerMap() {
+		return *(this->factoryIdManagerMap);
+	}
 
-Entity& CoreFactory::getEntity(id_type id) {
-  auto it = this->entities.find(id);
-  return ((it == this->entities.end()) ? *it->second : getNewEntity());
-}
+	Entity& CoreFactory::getNewEntity() {
+		Entity * newEntity = new Entity(
+			this->factoryIdManagerEntity->getNewId()
+		);
+		this->entities.insert(std::make_pair(newEntity->getId(), newEntity));
+		return *newEntity;
+	}
 
-void CoreFactory::deleteEntity(id_type &id) {
-  this->factoryIdManagerEntity->freeId(entities.at(id)->getId());
-  delete(entities[id]);
-}
+	Entity& CoreFactory::getEntity(id_type id) {
+		auto it = this->entities.find(id);
+		return ((it == this->entities.end()) ? *it->second : getNewEntity());
+	}
 
-void CoreFactory::deleteMap(id_type &id) {
-  //this->factoryIdManagerMap->freeId(maps[id]->getEntityId());
-  //delete(maps[id]);
-}
+	void CoreFactory::deleteEntity(id_type &id) {
+		this->factoryIdManagerEntity->freeId(entities.at(id)->getId());
+		delete(entities[id]);
+	}
 
-CoreFactory::~CoreFactory() {
-  delete this->factoryIdManagerEntity;
+	void CoreFactory::deleteMap(id_type &id) {
+		//this->factoryIdManagerMap->freeId(maps[id]->getEntityId());
+		//delete(maps[id]);
+	}
+
+	CoreFactory::~CoreFactory() {
+		delete this->factoryIdManagerEntity;
+	}
 }

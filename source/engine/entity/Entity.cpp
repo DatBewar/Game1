@@ -2,9 +2,13 @@
 
 #include <iostream>
 
-Entity::Entity(id_type &ent_id) : UniqueId(ent_id) {
-}
+using namespace engine;
 
-Entity::~Entity() {
+namespace entity {
+	Entity::Entity(id_type &ent_id) : UniqueId(ent_id) {
+	}
 
+	Entity::~Entity() {
+
+	}
 }

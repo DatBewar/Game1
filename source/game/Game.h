@@ -18,8 +18,8 @@ private:
 	sf::RenderWindow engineWindow;
 
 	// Core
-	GraphicCore _graphicCore;
-	CoreFactory _coreFactory;
+	engine::GraphicCore _graphicCore;
+	engine::CoreFactory _coreFactory;
 
 	// Other
 

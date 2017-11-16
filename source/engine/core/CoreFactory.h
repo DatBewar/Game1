@@ -8,40 +8,42 @@
 #include "core/UniqueId.h"
 #include "map/Map.h"
 
-class CoreFactory {
-private:
-  static CoreFactory m_instance;
+namespace engine {
+	class CoreFactory {
+	private:
+		static CoreFactory m_instance;
 
-  IdManager *factoryIdManagerEntity;
-  IdManager *factoryIdManagerMap;
+		IdManager *factoryIdManagerEntity;
+		IdManager *factoryIdManagerMap;
 
-  std::unordered_map<id_type, Entity*> entities;
-  std::unordered_map<id_type, Map*> maps;
+		std::unordered_map<id_type, entity::Entity*> entities;
+		std::unordered_map<id_type, map::Map*> maps;
 
-  CoreFactory& operator= (const CoreFactory&){}
-  CoreFactory (const CoreFactory&){};
-public:
-  static CoreFactory& instance();
-  CoreFactory();
+		CoreFactory& operator= (const CoreFactory&) {}
+		CoreFactory(const CoreFactory&) {};
+	public:
+		static CoreFactory& instance();
+		CoreFactory();
 
-  // New
-  IdManager& getIdManagerEntity();
-  IdManager& getIdManagerMap();
+		// New
+		IdManager& getIdManagerEntity();
+		IdManager& getIdManagerMap();
 
-  Entity& getNewEntity();
+		entity::Entity& getNewEntity();
 
-  Entity& getEntity(id_type id);
+		entity::Entity& getEntity(id_type id);
 
-  Map& getNewMap();
+		map::Map& getNewMap();
 
-  Map& getMap(id_type id);
+		map::Map& getMap(id_type id);
 
-  // Delete
-  void deleteEntity(id_type &id);
-  void deleteMap(id_type &id);
+		// Delete
+		void deleteEntity(id_type &id);
+		void deleteMap(id_type &id);
 
-  virtual ~CoreFactory();
+		virtual ~CoreFactory();
 
-};
+	};
+}
 
 #endif //_U_COREFACTORY_H

@@ -4,19 +4,22 @@
 #include "core/Types.h"
 #include "core/UniqueId.h"
 
-typedef u_int_64 id_type;
+namespace engine {
+	typedef u_int_64 id_type;
 
-class IdManager {
-private:
-  std::atomic<id_type> pool;
-public:
-  IdManager();
-  ~IdManager();
+	class IdManager {
+	private:
+		std::atomic<id_type> pool;
+	public:
+		IdManager();
+		~IdManager();
 
-  id_type& getNewId();
+		id_type& getNewId();
 
-  void freeId(id_type &_entityId);
+		void freeId(id_type &_entityId);
 
-};
+	};
+
+}
 
 #endif //_U_IDMANAGER_H

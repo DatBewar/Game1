@@ -4,6 +4,7 @@
 #include "core/CoreFactory.h"
 
 using namespace std;
+using namespace engine;
 
 void test() {
 	CoreFactory factory;
