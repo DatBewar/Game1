@@ -6,8 +6,8 @@ set(CMAKE_CXX_FLAGS "-Wall -o3 -lsfml-graphics -lsfml-window -lsfml-system")
 
 # Include
 set(
-    ENGINE_INCLUDE_H
-    "${SOURCE_DIR}/engine"
+	ENGINE_INCLUDE_H
+	"${SOURCE_DIR}/engine"
 )
 
 set(
@@ -53,12 +53,23 @@ set(
 	game/Game.cpp
 )
 
-add_library(engine-lib OBJECT ${ENGINE_HEADERS} ${ENGINE_SOURCES})
-target_include_directories(engine-lib PUBLIC ${ENGINE_INCLUDE_H})
+add_library(
+	engine-lib
+	OBJECT
+	${ENGINE_HEADERS}
+	${ENGINE_SOURCES}
+)
+
+target_include_directories(
+	engine-lib
+	PUBLIC
+	${ENGINE_INCLUDE_H}
+)
 
 add_executable(
 	${BIN_NAME}
 	${GAME_SOURCES}
+	$<TARGET_OBJECTS:engine-lib>
 )
 
 target_link_libraries(
