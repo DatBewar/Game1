@@ -2,7 +2,7 @@
 
 namespace engine {
 	GraphicCore::GraphicCore(sf::RenderWindow *w) {
-		this->window = w;
+		this->_window = w;
 	}
 
 
@@ -16,6 +16,6 @@ namespace engine {
 	}*/
 
 	void GraphicCore::draw(sf::Sprite *s) {
-		this->window->draw(*s);
+		this->_window->draw(*s);
 	}
 }

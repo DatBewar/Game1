@@ -1,9 +1,9 @@
 #include "Game.h"
 #include <iostream>
 
-Game::Game() : _graphicCore(&this->engineWindow) {
-	this->engineWindow.create(sf::VideoMode(800, 600, 32), "Game");
-	this->engineWindow.setVisible(false);
+Game::Game() : _graphicCore(&this->_engineWindow){
+	this->_engineWindow.create(sf::VideoMode(800, 600, 32), "Game");
+	this->_engineWindow.setVisible(false);
 }
 
 void Game::run() {
@@ -13,7 +13,7 @@ void Game::run() {
 	// Window
 	//this->inputCore.setWindow(&this->engineWindow);
 
-	while (this->engineWindow.isOpen()) {
+	while (this->_engineWindow.isOpen()) {
 		time = clock.restart();
 		this->engine_update(time);
 	}
@@ -31,16 +31,17 @@ void Game::engine_run() {
 	sf::Clock clock;
 	sf::Time time;
 
-	while (this->engineWindow.isOpen()) {
+	while (this->_engineWindow.isOpen()) {
 		time = clock.restart();
 		this->engine_update(time);
 	}
 }
 
 void Game::engine_update(sf::Time elapsed) {
-	this->engineWindow.clear();
-
-	this->engineWindow.display();
+	//INPUT
+	//SIMULATE
+	this->_engineWindow.clear();
+	this->_engineWindow.display();
 }
 
 Game::~Game() {

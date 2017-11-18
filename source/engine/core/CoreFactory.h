@@ -13,11 +13,11 @@ namespace engine {
 	private:
 		static CoreFactory m_instance;
 
-		IdManager *factoryIdManagerEntity;
-		IdManager *factoryIdManagerMap;
+		IdManager *_factoryIdManagerEntity;
+		IdManager *_factoryIdManagerMap;
 
-		std::unordered_map<id_type, entity::Entity*> entities;
-		std::unordered_map<id_type, map::Map*> maps;
+		std::unordered_map<id_type, entity::Entity*> _entities;
+		std::unordered_map<id_type, map::Map*> _maps;
 
 		CoreFactory& operator= (const CoreFactory&) {}
 		CoreFactory(const CoreFactory&) {};

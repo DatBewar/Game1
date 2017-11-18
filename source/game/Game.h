@@ -15,11 +15,16 @@
 class Game {
 private:
 	// Window
-	sf::RenderWindow engineWindow;
+	sf::RenderWindow _engineWindow;
 
 	// Core
 	engine::GraphicCore _graphicCore;
 	engine::CoreFactory _coreFactory;
+
+
+	// Map
+
+	// Entity
 
 	// Other
 

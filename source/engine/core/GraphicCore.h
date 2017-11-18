@@ -20,7 +20,7 @@ namespace engine {
 
 		~GraphicCore();
 	private:
-		sf::RenderWindow *window;
+		sf::RenderWindow *_window;
 	};
 }
 

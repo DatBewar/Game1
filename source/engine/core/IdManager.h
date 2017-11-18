@@ -9,7 +9,7 @@ namespace engine {
 
 	class IdManager {
 	private:
-		std::atomic<id_type> pool;
+		std::atomic<id_type> _pool;
 	public:
 		IdManager();
 		~IdManager();

@@ -8,25 +8,25 @@ namespace engine {
 	template<typename T>
 	class UniqueId {
 	private:
-		T *id;
+		T *_id;
 
 	public:
 		UniqueId(T &_id) {
-			this->id = &_id;
+			this->_id = &_id;
 		}
 		~UniqueId() {
 		}
 
 		T& getId() {
-			return *id;
+			return *_id;
 		}
 
 		UniqueId<T>& getEntityId() {
-			return this->id;
+			return this->_id;
 		}
 
 		boolean operator==(const UniqueId &_objId) {
-			return this->id == _objId.getId();
+			return this->_id == _objId.getId();
 		}
 
 		UniqueId(const UniqueId &_copy) = delete;

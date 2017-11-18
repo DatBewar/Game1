@@ -30,3 +30,15 @@
 *.exe
 *.out
 *.app
+
+# VS
+.vs
+
+# Cmake
+**/*CMakeSettings.json
+
+# SFML
+dependencies/SFML
+
+# Project
+OUTPUT
