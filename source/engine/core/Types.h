@@ -44,4 +44,9 @@ typedef double float_64;
 
 typedef std::atomic_ullong atomic_u_int_64;
 
+typedef struct vector_struct {
+	float x;
+	float y;
+}vector_float;
+
 #endif //_U_TYPES_

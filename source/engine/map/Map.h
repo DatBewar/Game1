@@ -28,11 +28,16 @@ namespace map {
 	private:
 		u_int_16 _sizeX;
 		u_int_16 _sizeY;
+		u_int_16 _gameSizeX;
+		u_int_16 _gameSizeY;
 
 		entity::Entity **_map;
 
+		void init(engine::id_type &id, u_int_16 x, u_int_16 y, u_int_16 gameX, u_int_16 gameY);
+
 	public:
 		Map(engine::id_type &id, u_int_16 x, u_int_16 y);
+		Map(engine::id_type &id, u_int_16 x, u_int_16 y, u_int_16 gameX, u_int_16 gameY);
 
 		u_int_16 getXSize() {
 			return this->_sizeX;

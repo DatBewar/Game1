@@ -22,13 +22,15 @@ include_directories(
 
 set(
 	ENGINE_HEADERS
-	engine/core/Component.h
+	engine/core/Camera.h
 	engine/core/CoreFactory.h
-	engine/core/Displacement.h
 	engine/core/GraphicCore.h
 	engine/core/IdManager.h
 	engine/core/Types.h
 	engine/core/UniqueId.h
+	engine/core/component/Component.h
+	engine/core/component/Displacement.h
+	engine/core/component/DrawableObject.h
 	engine/entity/Entity.h
 	engine/entity/Squad.h
 	engine/map/Cell.h
@@ -38,10 +40,12 @@ set(
 
 set(
 	ENGINE_SOURCES
+	engine/core/Camera.cpp
 	engine/core/CoreFactory.cpp
-	engine/core/Displacement.cpp
 	engine/core/GraphicCore.cpp
 	engine/core/IdManager.cpp
+	engine/core/component/Displacement.cpp
+	engine/core/component/DrawableObject.cpp
 	engine/entity/Entity.cpp
 	engine/entity/Squad.cpp
 	engine/map/Cell.cpp

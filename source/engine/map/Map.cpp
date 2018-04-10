@@ -23,8 +23,18 @@ using namespace engine;
 
 namespace map {
 	Map::Map(id_type &id, u_int_16 x, u_int_16 y) : UniqueId(id) {
+		init(id, x, y, x, y);
+	}
+
+	Map::Map(id_type &id, u_int_16 x, u_int_16 y, u_int_16 gameX, u_int_16 gameY) : UniqueId(id) {
+		init(id, x, y, gameX, gameY);
+	}
+
+	void Map::init(engine::id_type &id, u_int_16 x, u_int_16 y, u_int_16 gameX, u_int_16 gameY) {
 		this->_sizeX = x;
 		this->_sizeY = y;
+		this->_gameSizeX = gameX;
+		this->_gameSizeY = gameY;
 	}
 
 	void Map::setEntity(u_int_16 x, u_int_16 y, Entity *ent) {

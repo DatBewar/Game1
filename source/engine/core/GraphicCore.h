@@ -22,7 +22,6 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
-//#include "Player.h"
 namespace engine {
 	class GraphicCore {
 	public:
@@ -38,4 +37,4 @@ namespace engine {
 	};
 }
 
-#endif
+#endif //_CGRAPHICCORE_H

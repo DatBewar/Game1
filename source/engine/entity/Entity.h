@@ -24,7 +24,7 @@
 
 #include "core/UniqueId.h"
 #include "core/IdManager.h"
-#include "core/Component.h"
+#include "core/component/Component.h"
 
 namespace entity {
 	class Entity : public engine::UniqueId<engine::id_type> {

@@ -1,5 +1,5 @@
 /*
-* Environment.h
+* DrawableObject.h
 * Copyright (C) 2017 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
@@ -16,44 +16,26 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _U_ENVIRONMENT_H
-#define _U_ENVIRONMENT_H
-
-#include <SFML/Graphics.hpp>
+#ifndef _CDRAWABLEOBJECT_H
+#define _CDRAWABLEOBJECT_H
 
 #include "core/Types.h"
+#include <SFML/Graphics.hpp>
+#include <string>
 
-namespace map {
-	enum EnvType {
-		plain,
-		forest,
-		building
-	};
-
-	class Environment {
+namespace core {
+	class DrawableObject {
 	private:
-		EnvType _type;
-		int_16 _attackModifier;
-		int_16 _defenseModifier;
-
+		sf::Sprite _sprite;
 	public:
-		Environment();
-		Environment(EnvType t);
-		Environment(int_16 attack, int_16 defense);
-		Environment(EnvType t, int_16 attack, int_16 defense);
+		DrawableObject();
+		virtual ~DrawableObject();
 
-		EnvType getEnvType() {
-			return this->_type;
-		}
+		sf::Sprite getCurrentSprite();
 
-		int_16 getAttackModifier() {
-			return this->_attackModifier;
-		}
-
-		int_16 getDefenseModifier() {
-			return this->_defenseModifier;
-		}
+		void loadSprite(std::string);
+		void loadSprite(std::string, vector_float);
 	};
 }
 
-#endif //_U_ENVIRONMENT_H
+#endif //_CDRAWABLEOBJECT_H
