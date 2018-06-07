@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(AWL CXX)
+project(GAME1 CXX)
 include(ExternalProject)
 
 #Project directories

@@ -1,6 +1,6 @@
-project(AWL CXX)
+project(GAME1 CXX)
 
-set(BIN_NAME "awl")
+set(BIN_NAME "game1")
 #Compilation flags
 set(CMAKE_CXX_FLAGS "-Wall -o3 -lsfml-graphics -lsfml-window -lsfml-system")
 
@@ -32,8 +32,6 @@ set(
 	engine/core/component/Displacement.h
 	engine/core/component/DrawableObject.h
 	engine/entity/Entity.h
-	engine/entity/Squad.h
-	engine/map/Cell.h
 	engine/map/Environment.h
 	engine/map/Map.h
 )
@@ -47,8 +45,6 @@ set(
 	engine/core/component/Displacement.cpp
 	engine/core/component/DrawableObject.cpp
 	engine/entity/Entity.cpp
-	engine/entity/Squad.cpp
-	engine/map/Cell.cpp
 	engine/map/Environment.cpp
 	engine/map/Map.cpp
 )

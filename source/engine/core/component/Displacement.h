@@ -20,9 +20,10 @@
 #define _U_DISPLACEMENT_H
 
 #include "core/Types.h"
+#include "Component.h"
 
 namespace core {
-	class Displacement {
+	class Displacement : engine::Component {
 	public:
 		Displacement();
 	private:
