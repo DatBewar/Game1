@@ -10,19 +10,14 @@ set(DEPENDENCIES_DIR "${PROJECT_DIR}/dependencies")
 set(SOURCE_DIR "${PROJECT_DIR}/source")
 set(PROJECT_PREFIX "${OUTPUT_DIR}/PREFIX")
 
-#Path to built dependencies
-set(CMAKE_PREFIX_PATH ${CMAKE_MODULE_PATH} "${DEPENDENCIES_DIR}/SFML/cmake")
-
 #Project output
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPUT_DIR}/bin")
 
 ### DEPENDANCIES ###
 # SFML
-set(SFML_ROOT "${DEPENDENCIES_DIR}/SFML")
-find_package(SFML COMPONENTS system window graphics network audio)
-if(SFML_FOUND)
-  include_directories(${SFML_INCLUDE_DIR})
-else()
+set(SFML_DIR "${DEPENDENCIES_DIR}/SFML/cmake")
+find_package(SFML 2.5 COMPONENTS system window graphics network audio)
+if(NOT SFML_FOUND)
   message(FATAL_ERROR "You need SFML library")
 endif()
 ###################

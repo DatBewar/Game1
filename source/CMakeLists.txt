@@ -76,6 +76,9 @@ add_executable(
 
 target_link_libraries(
 	${BIN_NAME}
-	${SFML_LIBRARIES}
-	${SFML_DEPENDENCIES}
+	SFML::graphics
+	SFML::system
+	SFML::window
+	SFML::network
+	SFML::audio
 )
