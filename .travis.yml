@@ -9,6 +9,8 @@ compiler:
 
 addons:
   apt:
+    sources:
+      - debian-sid
     packages:
       - libsfml-dev
 
