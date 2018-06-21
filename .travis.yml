@@ -1,7 +1,16 @@
 language: cpp
 
+os:
+  - linux
+
 compiler:
   - gcc
+  - clang
+
+addons:
+  apt:
+    packages:
+      - libsfml-dev
 
 before_script:
   - mkdir build
