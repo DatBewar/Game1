@@ -1,6 +1,6 @@
 /*
-* Displacement.cpp
-* Copyright (C) 2017 Croze Erwan
+* CDisplacement.h
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,10 +16,15 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "Displacement.h"
+#pragma once
+
+#include "core/utils/Types.h"
+#include "Component.h"
 
 namespace core {
-	Displacement::Displacement() {
-
-	}
+	class CDisplacement : engine::Component {
+	public:
+		CDisplacement();
+	private:
+	};
 }

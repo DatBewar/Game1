@@ -1,6 +1,6 @@
 /*
-* GraphicCore.h
-* Copyright (C) 2017 Croze Erwan
+* UniqueId.h
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,25 +16,36 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _CGRAPHICCORE_H
-#define _CGRAPHICCORE_H
+#pragma once
 
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
+#include "core/utils/Types.h"
+#include <iostream>
 
 namespace engine {
-	class GraphicCore {
-	public:
-		GraphicCore(sf::RenderWindow *w);
-
-		//void drawPlayer(CPlayer *p);
-
-		void draw(sf::Sprite *s);
-
-		~GraphicCore();
+	template<typename T>
+	class UniqueId {
 	private:
-		sf::RenderWindow *_window;
+		T *_id;
+
+	public:
+		UniqueId(T &_id) {
+			this->_id = &_id;
+		}
+		~UniqueId() {
+		}
+
+		T& getId() {
+			return *_id;
+		}
+
+		UniqueId<T>& getEntityId() {
+			return this->_id;
+		}
+
+		boolean operator==(const UniqueId &_objId) {
+			return this->_id == _objId.getId();
+		}
+
+		UniqueId(const UniqueId &_copy) = delete;
 	};
 }
-
-#endif //_CGRAPHICCORE_H

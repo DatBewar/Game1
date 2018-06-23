@@ -1,6 +1,6 @@
 /*
-* Cell.cpp
-* Copyright (C) 2017 Croze Erwan
+* GraphicCore.h
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,10 +16,22 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "Cell.h"
+#pragma once
 
-namespace map {
-	Cell::Cell() {
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 
-	}
+namespace engine {
+	class GraphicSystem {
+	public:
+		GraphicSystem(sf::RenderWindow *w);
+
+		//void drawPlayer(CPlayer *p);
+
+		void draw(sf::Sprite *s);
+
+		~GraphicSystem();
+	private:
+		sf::RenderWindow *_window;
+	};
 }

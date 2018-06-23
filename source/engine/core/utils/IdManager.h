@@ -1,6 +1,6 @@
 /*
 * IdManager.h
-* Copyright (C) 2017 Croze Erwan
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,11 +16,10 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _U_IDMANAGER_H
-#define _U_IDMANAGER_H
+#pragma once
 
-#include "core/Types.h"
-#include "core/UniqueId.h"
+#include "core/utils/Types.h"
+#include "core/utils/UniqueId.h"
 
 namespace engine {
 	typedef u_int_64 id_type;
@@ -40,4 +39,3 @@ namespace engine {
 
 }
 
-#endif //_U_IDMANAGER_H

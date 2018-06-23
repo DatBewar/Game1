@@ -1,6 +1,6 @@
 /*
-* UniqueId.h
-* Copyright (C) 2017 Croze Erwan
+* CSprite.h
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,39 +16,23 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _U_OBJECTID_H
-#define _U_OBJECTID_H
+#pragma once
 
-#include "core/Types.h"
-#include <iostream>
+#include "core/utils/Types.h"
+#include <SFML/Graphics.hpp>
+#include <string>
 
-namespace engine {
-	template<typename T>
-	class UniqueId {
+namespace core {
+	class CSprite {
 	private:
-		T *_id;
-
+		sf::Sprite _sprite;
 	public:
-		UniqueId(T &_id) {
-			this->_id = &_id;
-		}
-		~UniqueId() {
-		}
+		CSprite();
+		virtual ~CSprite();
 
-		T& getId() {
-			return *_id;
-		}
+		sf::Sprite getCurrentSprite();
 
-		UniqueId<T>& getEntityId() {
-			return this->_id;
-		}
-
-		boolean operator==(const UniqueId &_objId) {
-			return this->_id == _objId.getId();
-		}
-
-		UniqueId(const UniqueId &_copy) = delete;
+		void loadSprite(std::string);
+		void loadSprite(std::string, vector_float);
 	};
 }
-
-#endif //_U_OBJECTID_H

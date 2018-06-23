@@ -1,6 +1,6 @@
 /*
-* DrawableObject.h
-* Copyright (C) 2017 Croze Erwan
+* CDisplacement.cpp
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,26 +16,10 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "DrawableObject.h"
-
-using namespace sf;
+#include "CDisplacement.h"
 
 namespace core {
-	DrawableObject::DrawableObject() {
-	}
-
-	DrawableObject::~DrawableObject() {
-	};
-
-	Sprite DrawableObject::getCurrentSprite() {
-		return Sprite();
-	}
-
-	void DrawableObject::loadSprite(std::string path) {
-
-	}
-
-	void DrawableObject::loadSprite(std::string path, vector_float ratio) {
+	CDisplacement::CDisplacement() {
 
 	}
 }

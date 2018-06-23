@@ -24,13 +24,14 @@ set(
 	ENGINE_HEADERS
 	engine/core/Camera.h
 	engine/core/CoreFactory.h
-	engine/core/GraphicCore.h
-	engine/core/IdManager.h
-	engine/core/Types.h
-	engine/core/UniqueId.h
+	engine/core/component/CDisplacement.h
 	engine/core/component/Component.h
-	engine/core/component/Displacement.h
-	engine/core/component/DrawableObject.h
+	engine/core/component/CPosition.h
+	engine/core/component/CSprite.h
+	engine/core/system/GraphicSystem.h
+	engine/core/utils/IdManager.h
+	engine/core/utils/Types.h
+	engine/core/utils/UniqueId.h
 	engine/entity/Entity.h
 	engine/map/Environment.h
 	engine/map/Map.h
@@ -40,10 +41,11 @@ set(
 	ENGINE_SOURCES
 	engine/core/Camera.cpp
 	engine/core/CoreFactory.cpp
-	engine/core/GraphicCore.cpp
-	engine/core/IdManager.cpp
-	engine/core/component/Displacement.cpp
-	engine/core/component/DrawableObject.cpp
+	engine/core/component/CDisplacement.cpp
+	engine/core/component/CPosition.cpp
+	engine/core/component/CSprite.cpp
+	engine/core/system/GraphicSystem.cpp
+	engine/core/utils/IdManager.cpp
 	engine/entity/Entity.cpp
 	engine/map/Environment.cpp
 	engine/map/Map.cpp

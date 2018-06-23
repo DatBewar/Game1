@@ -1,6 +1,6 @@
 /*
-* GraphicCore.cpp
-* Copyright (C) 2017 Croze Erwan
+* CPosition.cpp
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,24 +16,10 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "GraphicCore.h"
+#include "CPosition.h"
 
-namespace engine {
-	GraphicCore::GraphicCore(sf::RenderWindow *w) {
-		this->_window = w;
-	}
+namespace core {
+	CPosition::CPosition() {
 
-
-	GraphicCore::~GraphicCore() {
-	}
-
-
-	/*void GraphicCore::drawPlayer(CPlayer *p) {
-		if (p->getSprite() != nullptr)
-			this->window->draw(*p->getSprite());
-	}*/
-
-	void GraphicCore::draw(sf::Sprite *s) {
-		this->_window->draw(*s);
 	}
 }

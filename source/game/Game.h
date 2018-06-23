@@ -1,6 +1,6 @@
 /*
 * Game.h
-* Copyright (C) 2017 Croze Erwan
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,15 +16,15 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _CENGINE_H
-#define _CENGINE_H
+#pragma once
 
 #include <iostream>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-#include "core/GraphicCore.h"
+#include "core/system/GraphicSystem.h"
+
 #include "core/CoreFactory.h"
 
 class Game {
@@ -33,9 +33,10 @@ private:
 	sf::RenderWindow _engineWindow;
 
 	// Core
-	engine::GraphicCore _graphicCore;
 	engine::CoreFactory _coreFactory;
 
+	// System
+	engine::GraphicSystem _graphicSystem;
 
 	// Map
 
@@ -68,5 +69,3 @@ public:
 
 	~Game();
 };
-
-#endif

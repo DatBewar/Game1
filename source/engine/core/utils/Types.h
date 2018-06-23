@@ -1,6 +1,6 @@
 /*
 * Types.h
-* Copyright (C) 2017 Croze Erwan
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,9 +16,7 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-
-#ifndef _U_TYPES_
-#define _U_TYPES_
+#pragma once
 
 #include <string>
 #include <atomic>
@@ -49,4 +47,3 @@ typedef struct vector_struct {
 	float y;
 }vector_float;
 
-#endif //_U_TYPES_

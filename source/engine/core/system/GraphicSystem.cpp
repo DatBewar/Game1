@@ -1,5 +1,5 @@
 /*
-* Squad.cpp
+* GraphicSystem.cpp
 * Copyright (C) 2017 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
@@ -16,14 +16,24 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "Squad.h"
+#include "GraphicSystem.h"
 
-namespace entity {
-	Squad::Squad() : Squad(0, 0, 0) {}
+namespace engine {
+	GraphicSystem::GraphicSystem(sf::RenderWindow *w) {
+		this->_window = w;
+	}
 
-	Squad::Squad(int_16 attack, u_int_16 unit, u_int_16 max) : _displacement() {
-		this->_attackPower = attack;
-		this->_unitNumber = unit;
-		this->_unitMaxNumber = max;
+
+	GraphicSystem::~GraphicSystem() {
+	}
+
+
+	/*void GraphicSystem::drawPlayer(CPlayer *p) {
+		if (p->getSprite() != nullptr)
+			this->window->draw(*p->getSprite());
+	}*/
+
+	void GraphicSystem::draw(sf::Sprite *s) {
+		this->_window->draw(*s);
 	}
 }

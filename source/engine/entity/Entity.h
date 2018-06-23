@@ -1,6 +1,6 @@
 /*
 * Entity.h
-* Copyright (C) 2017 Croze Erwan
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,13 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _U_ENTITY_H
-#define _U_ENTITY_H
+#pragma once
 
 #include <string>
 #include <unordered_map>
 
-#include "core/UniqueId.h"
-#include "core/IdManager.h"
+#include "core/utils/UniqueId.h"
+#include "core/utils/IdManager.h"
 #include "core/component/Component.h"
 
 namespace entity {
@@ -50,9 +49,9 @@ namespace entity {
 			return *(this->components[_key]);
 		}
 
-		void update() {
+		void update(float_32 dt) {
 			for (const auto &it : this->components) {
-				it.second->update();
+				it.second->update(dt);
 			}
 		}
 
@@ -68,4 +67,3 @@ namespace entity {
 		Entity(const Entity &_copy) = delete;
 	};
 }
-#endif //_U_ENTITY_H

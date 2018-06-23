@@ -1,6 +1,6 @@
 /*
-* DrawableObject.h
-* Copyright (C) 2017 Croze Erwan
+* CSprite.h
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,26 +16,26 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _CDRAWABLEOBJECT_H
-#define _CDRAWABLEOBJECT_H
+#include "CSprite.h"
 
-#include "core/Types.h"
-#include <SFML/Graphics.hpp>
-#include <string>
+using namespace sf;
 
 namespace core {
-	class DrawableObject {
-	private:
-		sf::Sprite _sprite;
-	public:
-		DrawableObject();
-		virtual ~DrawableObject();
+	CSprite::CSprite() {
+	}
 
-		sf::Sprite getCurrentSprite();
-
-		void loadSprite(std::string);
-		void loadSprite(std::string, vector_float);
+	CSprite::~CSprite() {
 	};
-}
 
-#endif //_CDRAWABLEOBJECT_H
+	Sprite CSprite::getCurrentSprite() {
+		return Sprite();
+	}
+
+	void CSprite::loadSprite(std::string path) {
+
+	}
+
+	void CSprite::loadSprite(std::string path, vector_float ratio) {
+
+	}
+}

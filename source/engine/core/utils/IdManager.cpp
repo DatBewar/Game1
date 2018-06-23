@@ -1,6 +1,6 @@
 /*
-* Cell.h
-* Copyright (C) 2017 Croze Erwan
+* IdManager.cpp
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,18 +16,24 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _U_CELL_H
-#define _U_CELL_H
+#include "IdManager.h"
 
-#include "core/Types.h"
+#include <iostream>
+namespace engine {
+	IdManager::IdManager() {
+		this->_pool = 0;
+	}
 
-namespace map {
-	class Cell {
-	public:
-		Cell();
-	private:
+	id_type& IdManager::getNewId() {
+		id_type *_id = new id_type(this->_pool++);
+		return *_id;
+	}
 
-	};
+	void IdManager::freeId(id_type &_id) {
+		delete &_id;
+	}
+
+	IdManager::~IdManager() {
+
+	}
 }
-
-#endif //_U_CELL_H

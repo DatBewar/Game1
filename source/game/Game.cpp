@@ -1,6 +1,6 @@
 /*
 * Game.cpp
-* Copyright (C) 2017 Croze Erwan
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 #include "Game.h"
 #include <iostream>
 
-Game::Game() : _graphicCore(&this->_engineWindow){
+Game::Game() : _graphicSystem(&this->_engineWindow){
 	this->_engineWindow.create(sf::VideoMode(800, 600, 32), "Game");
 	this->_engineWindow.setVisible(false);
 }

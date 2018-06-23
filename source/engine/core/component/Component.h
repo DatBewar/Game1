@@ -1,6 +1,6 @@
 /*
 * Component.h
-* Copyright (C) 2017 Croze Erwan
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,8 +16,7 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _U_COMPONENT_H
-#define _U_COMPONENT_H
+#pragma once
 
 namespace engine {
 	class Component {
@@ -25,8 +24,6 @@ namespace engine {
 		Component() {};
 		virtual ~Component() {};
 
-		virtual void update() = 0;
+		virtual void update(float_32 dt) = 0;
 	};
 }
-
-#endif //_U_COMPONENT_H

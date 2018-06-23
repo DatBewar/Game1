@@ -1,6 +1,6 @@
 /*
 * Environment.h
-* Copyright (C) 2017 Croze Erwan
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,12 +16,11 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _U_ENVIRONMENT_H
-#define _U_ENVIRONMENT_H
+#pragma once
 
 #include <SFML/Graphics.hpp>
 
-#include "core/Types.h"
+#include "core/utils/Types.h"
 
 namespace map {
 	enum EnvType {
@@ -55,5 +54,3 @@ namespace map {
 		}
 	};
 }
-
-#endif //_U_ENVIRONMENT_H
