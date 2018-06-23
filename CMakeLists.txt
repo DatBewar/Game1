@@ -10,6 +10,12 @@ set(DEPENDENCIES_DIR "${PROJECT_DIR}/dependencies")
 set(SOURCE_DIR "${PROJECT_DIR}/source")
 set(PROJECT_PREFIX "${OUTPUT_DIR}/PREFIX")
 
+if(NOT BUILD_TYPE)
+  set(BUILD_TYPE "DEBUG")
+endif()
+
+set(CMAKE_CXX_FLAGS_${BUILD_TYPE} "${CMAKE_CXX_FLAGS_${BUILD_TYPE}} -fsanitize=address")
+
 #Project output
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPUT_DIR}/bin")
 
