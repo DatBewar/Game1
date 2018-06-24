@@ -38,7 +38,7 @@
 **/*CMakeSettings.json
 
 # SFML
-#dependencies/SFML
+dependencies/*
 
 # Project
 OUTPUT

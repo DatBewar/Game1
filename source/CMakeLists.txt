@@ -2,7 +2,7 @@ project(GAME1 CXX)
 
 set(BIN_NAME "game1")
 #Compilation flags
-set(CMAKE_CXX_FLAGS "-Wall -o3 -lsfml-graphics -lsfml-window -lsfml-system")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -o3 -lsfml-graphics -lsfml-window -lsfml-system")
 
 # Include
 set(
@@ -16,6 +16,7 @@ set(
 )
 
 include_directories(
+	${OTHER_INCLUDE_H}
 	${ENGINE_INCLUDE_H}
 	${GAME_INCLUDE_H}
 )
