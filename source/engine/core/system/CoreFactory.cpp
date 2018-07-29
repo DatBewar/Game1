@@ -20,7 +20,6 @@
 
 #include <unordered_map>
 
-using namespace entity;
 using namespace map;
 
 namespace engine {

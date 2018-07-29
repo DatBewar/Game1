@@ -18,7 +18,6 @@
 
 #include "Map.h"
 
-using namespace entity;
 using namespace engine;
 
 namespace map {

@@ -47,3 +47,7 @@ typedef struct vector_struct {
 	float y;
 }vector_float;
 
+enum graphic_backend {
+    BACKEND_SFML
+};
+

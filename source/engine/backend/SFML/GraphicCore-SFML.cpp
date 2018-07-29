@@ -1,6 +1,6 @@
 /*
-* GraphicCore.h
-* Copyright (C) 2018 Croze Erwan
+* GraphicCoreSFML.cpp
+* Copyright (C) 2017 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,22 +16,23 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#pragma once
-
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
+#include <backend/SFML/GraphicCore-SFML.h>
+#include <core/system/IGraphicCore.h>
 
 namespace engine {
-	class GraphicSystem {
-	public:
-		GraphicSystem(sf::RenderWindow *w);
+namespace backend_sfml {
 
-		//void drawPlayer(CPlayer *p);
+	GraphicCoreSFML::GraphicCoreSFML() {
+		this->_window.create(sf::VideoMode(800, 600, 32), "Game");
+		this->_window.setVisible(false);
+	}
 
-		void draw(sf::Sprite *s);
+	GraphicCoreSFML::~GraphicCoreSFML() {
+		this->_window.close();
+	}
 
-		~GraphicSystem();
-	private:
-		sf::RenderWindow *_window;
-	};
+	void GraphicCoreSFML::draw(sf::Sprite *s) {
+		this->_window.draw(*s);
+	}
+}
 }

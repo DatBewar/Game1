@@ -1,6 +1,6 @@
 /*
-* GraphicSystem.cpp
-* Copyright (C) 2017 Croze Erwan
+* CSprite-SFML.h
+* Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,24 +16,30 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "GraphicSystem.h"
+#include <memory>
+
+#include <core/component/ICSprite.h>
+
+#include <SFML/Graphics.hpp>
 
 namespace engine {
-	GraphicSystem::GraphicSystem(sf::RenderWindow *w) {
-		this->_window = w;
-	}
+namespace backend_sfml {
 
+	class CSpriteSFML : public ICSprite<std::shared_ptr<sf::Sprite*>> {
+	public:
+		CSpriteSFML() {
+			this->_sprite = nullptr;
+		}
 
-	GraphicSystem::~GraphicSystem() {
-	}
+		virtual std::shared_ptr<sf::Sprite*> getSprite();
+		
+		virtual void loadSprite(std::string path);
+		
+		virtual void loadSprite(std::string path, vector_float ratio);
 
+	private:
+		std::shared_ptr<sf::Sprite*> _sprite;
+	};
 
-	/*void GraphicSystem::drawPlayer(CPlayer *p) {
-		if (p->getSprite() != nullptr)
-			this->window->draw(*p->getSprite());
-	}*/
-
-	void GraphicSystem::draw(sf::Sprite *s) {
-		this->_window->draw(*s);
-	}
+}
 }

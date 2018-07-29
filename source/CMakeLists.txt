@@ -2,7 +2,7 @@ project(GAME1 CXX)
 
 set(BIN_NAME "game1")
 #Compilation flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -o3 -lsfml-graphics -lsfml-window -lsfml-system")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -lsfml-graphics -lsfml-window -lsfml-system")
 
 # Include
 set(
@@ -21,19 +21,32 @@ include_directories(
 	${GAME_INCLUDE_H}
 )
 
+if(SFML_FOUND)
+	set(BACKEND_HEADERS
+		${BACKEND_HEADERS}
+		engine/backend/SFML/GraphicCore-SFML.h
+		engine/backend/SFML/CSprite-SFML.h
+	)
+	set(BACKEND_SOURCES
+		${BACKEND_SOURCES}
+		engine/backend/SFML/GraphicCore-SFML.cpp
+		engine/backend/SFML/CSprite-SFML.cpp
+	)
+endif()
+
 set(
 	ENGINE_HEADERS
 	engine/core/Camera.h
-	engine/core/CoreFactory.h
 	engine/core/component/CDisplacement.h
-	engine/core/component/Component.h
 	engine/core/component/CPosition.h
-	engine/core/component/CSprite.h
-	engine/core/system/GraphicSystem.h
+	engine/core/component/IComponent.h
+	engine/core/component/ICSprite.h
+	engine/core/entity/Entity.h
+	engine/core/system/CoreFactory.h
+	engine/core/system/IGraphicCore.h
 	engine/core/utils/IdManager.h
 	engine/core/utils/Types.h
 	engine/core/utils/UniqueId.h
-	engine/entity/Entity.h
 	engine/map/Environment.h
 	engine/map/Map.h
 )
@@ -41,13 +54,11 @@ set(
 set(
 	ENGINE_SOURCES
 	engine/core/Camera.cpp
-	engine/core/CoreFactory.cpp
 	engine/core/component/CDisplacement.cpp
 	engine/core/component/CPosition.cpp
-	engine/core/component/CSprite.cpp
-	engine/core/system/GraphicSystem.cpp
+	engine/core/entity/Entity.cpp
+	engine/core/system/CoreFactory.cpp
 	engine/core/utils/IdManager.cpp
-	engine/entity/Entity.cpp
 	engine/map/Environment.cpp
 	engine/map/Map.cpp
 )
@@ -63,6 +74,8 @@ add_library(
 	OBJECT
 	${ENGINE_HEADERS}
 	${ENGINE_SOURCES}
+	${BACKEND_HEADERS}
+	${BACKEND_SOURCES}
 )
 
 target_include_directories(

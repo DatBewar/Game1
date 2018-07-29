@@ -23,21 +23,21 @@
 
 #include "core/utils/UniqueId.h"
 #include "core/utils/IdManager.h"
-#include "core/component/Component.h"
+#include "core/component/IComponent.h"
 
-namespace entity {
+namespace engine {
 	class Entity : public engine::UniqueId<engine::id_type> {
 	protected:
 		/**
 		* Components
 		*/
-		std::unordered_map<std::string, engine::Component*> components;
+		std::unordered_map<std::string, engine::IComponent*> components;
 
 	public:
 		Entity(engine::id_type &ent_id);
 		virtual ~Entity();
 
-		void setComponent(const std::string &_key, engine::Component &_comp) {
+		void setComponent(const std::string &_key, engine::IComponent &_comp) {
 			this->components.insert({ _key, &_comp });
 		}
 
@@ -45,7 +45,7 @@ namespace entity {
 			this->components.erase(_key);
 		}
 
-		engine::Component& getComponent(std::string  &_key) {
+		engine::IComponent& getComponent(std::string  &_key) {
 			return *(this->components[_key]);
 		}
 

@@ -1,5 +1,5 @@
 /*
-* CSprite.h
+* IComponent.h
 * Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
@@ -16,26 +16,14 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "CSprite.h"
+#pragma once
 
-using namespace sf;
+namespace engine {
+	class IComponent {
+	public:
+		IComponent();
+		virtual ~IComponent() {};
 
-namespace core {
-	CSprite::CSprite() {
-	}
-
-	CSprite::~CSprite() {
+		virtual void update(float_32 dt) = 0;
 	};
-
-	Sprite CSprite::getCurrentSprite() {
-		return Sprite();
-	}
-
-	void CSprite::loadSprite(std::string path) {
-
-	}
-
-	void CSprite::loadSprite(std::string path, vector_float ratio) {
-
-	}
 }

@@ -19,11 +19,6 @@
 #include "Game.h"
 #include <iostream>
 
-Game::Game() : _graphicSystem(&this->_engineWindow){
-	this->_engineWindow.create(sf::VideoMode(800, 600, 32), "Game");
-	this->_engineWindow.setVisible(false);
-}
-
 void Game::run() {
 	sf::Clock clock;
 	sf::Time time;

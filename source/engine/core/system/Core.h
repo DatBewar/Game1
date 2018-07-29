@@ -1,5 +1,5 @@
 /*
-* CPosition.h
+* Core.h
 * Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
@@ -18,14 +18,20 @@
 
 #pragma once
 
-#include "core/utils/Types.h"
-#include "IComponent.h"
+#include <core/utils/Types.h>
 
 namespace engine {
-	class CPosition : public IComponent {
-	public:
-		virtual void update(float_32 dt);
-		~CPosition() = default;
+	class Core {
 	private:
+		static Core m_instance;
+		graphic_backend getGraphicBackend() {
+			return this->_graphicBackend;
+		};
+		graphic_backend _graphicBackend;
+
+	public:
+		static Core& instance();
+		Core();
+		Core(graphic_backend);
 	};
 }

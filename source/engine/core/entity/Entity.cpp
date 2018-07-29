@@ -1,5 +1,5 @@
 /*
-* Component.h
+* Entity.cpp
 * Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
@@ -16,14 +16,17 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#pragma once
+#include "core/entity/Entity.h"
+
+#include <iostream>
+
+using namespace engine;
 
 namespace engine {
-	class Component {
-	public:
-		Component() {};
-		virtual ~Component() {};
+	Entity::Entity(id_type &ent_id) : UniqueId(ent_id) {
+	}
 
-		virtual void update(float_32 dt) = 0;
-	};
+	Entity::~Entity() {
+
+	}
 }

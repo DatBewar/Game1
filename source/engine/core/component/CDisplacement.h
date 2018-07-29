@@ -19,12 +19,13 @@
 #pragma once
 
 #include "core/utils/Types.h"
-#include "Component.h"
+#include "IComponent.h"
 
-namespace core {
-	class CDisplacement : engine::Component {
+namespace engine {
+	class CDisplacement : public IComponent {
 	public:
-		CDisplacement();
+		virtual void update(float_32 dt);
+		~CDisplacement() = default;
 	private:
 	};
 }

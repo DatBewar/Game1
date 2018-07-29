@@ -18,8 +18,8 @@
 
 #include "CDisplacement.h"
 
-namespace core {
-	CDisplacement::CDisplacement() {
+namespace engine {
+	void CDisplacement::update(float_32 dt) {
 
 	}
 }

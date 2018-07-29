@@ -20,7 +20,7 @@
 
 #include "core/utils/Types.h"
 #include "core/utils/UniqueId.h"
-#include "entity/Entity.h"
+#include "core/entity/Entity.h"
 
 namespace map {
 	class Map : engine::UniqueId<engine::id_type> {
@@ -30,7 +30,7 @@ namespace map {
 		u_int_16 _gameSizeX;
 		u_int_16 _gameSizeY;
 
-		entity::Entity **_map;
+		engine::Entity **_map;
 
 		void init(engine::id_type &id, u_int_16 x, u_int_16 y, u_int_16 gameX, u_int_16 gameY);
 
@@ -46,7 +46,7 @@ namespace map {
 			return this->_sizeY;
 		}
 
-		void setEntity(u_int_16 x, u_int_16 y, entity::Entity *ent);
+		void setEntity(u_int_16 x, u_int_16 y, engine::Entity *ent);
 
 
 		~Map() {};

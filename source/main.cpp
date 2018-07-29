@@ -17,9 +17,10 @@
 */
 
 #include <iostream>
+
 #include "game/Game.h"
-#include "entity/Entity.h"
-#include "core/CoreFactory.h"
+#include <core/entity/Entity.h>
+#include <core/system/CoreFactory.h>
 
 using namespace std;
 using namespace engine;

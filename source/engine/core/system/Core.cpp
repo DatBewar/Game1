@@ -1,5 +1,5 @@
 /*
-* CSprite.h
+* Core.cpp
 * Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
@@ -16,23 +16,20 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#pragma once
+#include <core/system/Core.h>
 
-#include "core/utils/Types.h"
-#include <SFML/Graphics.hpp>
-#include <string>
+namespace engine {
+	Core& Core::instance() {
+		return Core::m_instance;
+	}
 
-namespace core {
-	class CSprite {
-	private:
-		sf::Sprite _sprite;
-	public:
-		CSprite();
-		virtual ~CSprite();
+	Core::Core() {
+		Core::m_instance = this;
+		this->_graphicBackend = graphic_backend::BACKEND_SFML;
+	}
 
-		sf::Sprite getCurrentSprite();
-
-		void loadSprite(std::string);
-		void loadSprite(std::string, vector_float);
-	};
+	Core::Core(graphic_backend gb) {
+		Core::m_instance = this;
+		this->_graphicBackend = gb;
+	}
 }

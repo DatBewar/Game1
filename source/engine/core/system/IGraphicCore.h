@@ -1,5 +1,5 @@
 /*
-* CPosition.h
+* IGraphicCore.h
 * Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
@@ -18,14 +18,17 @@
 
 #pragma once
 
-#include "core/utils/Types.h"
-#include "IComponent.h"
+#include <core/utils/Types.h>
 
 namespace engine {
-	class CPosition : public IComponent {
+	template<typename S>
+	class IGraphicCore {
 	public:
-		virtual void update(float_32 dt);
-		~CPosition() = default;
-	private:
+		virtual ~IGraphicCore() = default;
+
+		virtual void draw(S) = 0;
+
+	protected:
+		IGraphicCore() = default;
 	};
 }

@@ -18,8 +18,8 @@
 
 #include "CPosition.h"
 
-namespace core {
-	CPosition::CPosition() {
+namespace engine {
+	void CPosition::update(float_32 dt) {
 
 	}
 }

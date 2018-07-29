@@ -1,5 +1,5 @@
 /*
-* CPosition.h
+* ICSprite.h
 * Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
@@ -18,14 +18,23 @@
 
 #pragma once
 
+#include <string>
+
 #include "core/utils/Types.h"
 #include "IComponent.h"
 
 namespace engine {
-	class CPosition : public IComponent {
+	template<typename S>
+	class ICSprite : public virtual IComponent {
 	public:
-		virtual void update(float_32 dt);
-		~CPosition() = default;
-	private:
+		virtual ~ICSprite() = default;
+
+		virtual S getSprite() = 0;
+
+		virtual void loadSprite(std::string path) = 0;
+		virtual void loadSprite(std::string path, vector_float ratio) = 0;
+
+	protected:
+		ICSprite() = default;
 	};
 }

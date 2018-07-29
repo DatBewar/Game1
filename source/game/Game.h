@@ -23,9 +23,9 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-#include "core/system/GraphicSystem.h"
-
-#include "core/CoreFactory.h"
+#include <core/system/IGraphicCore.h>
+#include <core/system/Core.h>
+#include <core/system/CoreFactory.h>
 
 class Game {
 private:
@@ -34,9 +34,10 @@ private:
 
 	// Core
 	engine::CoreFactory _coreFactory;
+	engine::Core _core;
 
 	// System
-	engine::GraphicSystem _graphicSystem;
+	//engine::IGraphicCore *_graphicSystem;
 
 	// Map
 
@@ -46,7 +47,7 @@ private:
 
 public:
 
-	Game();
+	Game() {};
 
 	/*
 	* Routine

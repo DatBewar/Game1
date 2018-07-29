@@ -1,5 +1,5 @@
 /*
-* Entity.cpp
+* CSprite-SFML.cpp
 * Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
@@ -16,17 +16,22 @@
 * along with this program.If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "entity/Entity.h"
+#include "CSprite-SFML.h"
 
-#include <iostream>
+namespace engine {
+namespace backend_sfml {
 
-using namespace engine;
-
-namespace entity {
-	Entity::Entity(id_type &ent_id) : UniqueId(ent_id) {
+	std::shared_ptr<sf::Sprite*> CSpriteSFML::getSprite() {
+		return this->_sprite;
 	}
 
-	Entity::~Entity() {
+	void CSpriteSFML::loadSprite(std::string path) {
 
 	}
+
+	void CSpriteSFML::loadSprite(std::string path, vector_float ratio) {
+
+	}
+
+}
 }
