@@ -36,7 +36,6 @@ endif()
 
 set(
 	ENGINE_HEADERS
-	engine/core/Camera.h
 	engine/core/component/CDisplacement.h
 	engine/core/component/CPosition.h
 	engine/core/component/IComponent.h
@@ -44,23 +43,20 @@ set(
 	engine/core/entity/Entity.h
 	engine/core/system/CoreFactory.h
 	engine/core/system/IGraphicCore.h
+	engine/core/utils/ClockTimer.h
 	engine/core/utils/IdManager.h
 	engine/core/utils/Types.h
 	engine/core/utils/UniqueId.h
-	engine/map/Environment.h
-	engine/map/Map.h
 )
 
 set(
 	ENGINE_SOURCES
-	engine/core/Camera.cpp
 	engine/core/component/CDisplacement.cpp
 	engine/core/component/CPosition.cpp
 	engine/core/entity/Entity.cpp
 	engine/core/system/CoreFactory.cpp
+	engine/core/utils/ClockTimer.cpp
 	engine/core/utils/IdManager.cpp
-	engine/map/Environment.cpp
-	engine/map/Map.cpp
 )
 
 set(

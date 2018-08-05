@@ -23,7 +23,6 @@
 #include <core/utils/IdManager.h>
 #include <core/entity/Entity.h>
 #include <core/utils/UniqueId.h>
-#include <map/Map.h>
 
 namespace engine {
 	class CoreFactory {
@@ -31,10 +30,8 @@ namespace engine {
 		static CoreFactory m_instance;
 
 		IdManager *_factoryIdManagerEntity;
-		IdManager *_factoryIdManagerMap;
 
 		std::unordered_map<id_type, Entity*> _entities;
-		std::unordered_map<id_type, map::Map*> _maps;
 
 		CoreFactory& operator= (const CoreFactory&) = default;
 		CoreFactory(const CoreFactory&) = default;
@@ -44,19 +41,12 @@ namespace engine {
 
 		// New
 		IdManager& getIdManagerEntity();
-		IdManager& getIdManagerMap();
 
 		Entity& getNewEntity();
-
 		Entity& getEntity(id_type id);
-
-		map::Map& getNewMap();
-
-		map::Map& getMap(id_type id);
 
 		// Delete
 		void deleteEntity(id_type &id);
-		void deleteMap(id_type &id);
 
 		~CoreFactory();
 

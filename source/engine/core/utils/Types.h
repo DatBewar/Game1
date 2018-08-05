@@ -21,9 +21,6 @@
 #include <string>
 #include <atomic>
 
-static std::string DRAWCOMPONENT = "DrawComponent";
-static std::string CALCULCOMPONENT = "CalculComponent";
-
 typedef bool boolean;
 
 typedef unsigned char byte;
@@ -51,3 +48,7 @@ enum graphic_backend {
     BACKEND_SFML
 };
 
+static std::string SPRITECOMPONENT = "SpriteComponent";
+static std::string CALCULCOMPONENT = "CalculComponent";
+static std::string POSITIONCOMPONENT = "PositionComponent";
+static std::string DISPLACEMENT = "DisplacementComponent";

@@ -19,7 +19,7 @@
 #include "CDisplacement.h"
 
 namespace engine {
-	void CDisplacement::update(float_32 dt) {
+	void CDisplacement::update(float_64 dt) {
 
 	}
 }

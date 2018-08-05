@@ -49,10 +49,9 @@ namespace engine {
 			return *(this->components[_key]);
 		}
 
-		void update(float_32 dt) {
-			for (const auto &it : this->components) {
-				it.second->update(dt);
-			}
+		boolean hasComponent(std::string &_key) {
+			//TODO rework
+			return (this->components.find(_key) != this->components.end());
 		}
 
 		/**

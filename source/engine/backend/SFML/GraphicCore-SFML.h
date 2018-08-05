@@ -26,11 +26,11 @@
 namespace engine {
 namespace backend_sfml {
 
-	class GraphicCoreSFML : IGraphicCore<sf::Sprite*> {
+	class GraphicCoreSFML : IGraphicCore<std::shared_ptr<sf::Sprite>> {
 	public:
 		GraphicCoreSFML();
 
-		void draw(sf::Sprite *s);
+		void draw(std::shared_ptr<sf::Sprite> s);
 
 		~GraphicCoreSFML();
 	private:

@@ -19,7 +19,7 @@
 #include "CPosition.h"
 
 namespace engine {
-	void CPosition::update(float_32 dt) {
+	void CPosition::update(float_64 dt) {
 
 	}
 }

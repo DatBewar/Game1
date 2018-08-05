@@ -20,8 +20,6 @@
 
 #include <unordered_map>
 
-using namespace map;
-
 namespace engine {
 	CoreFactory CoreFactory::m_instance = CoreFactory();
 
@@ -31,15 +29,10 @@ namespace engine {
 
 	CoreFactory::CoreFactory() {
 		this->_factoryIdManagerEntity = new IdManager();
-		this->_factoryIdManagerMap = new IdManager();
 	}
 
 	IdManager& CoreFactory::getIdManagerEntity() {
 		return *(this->_factoryIdManagerEntity);
-	}
-
-	IdManager& CoreFactory::getIdManagerMap() {
-		return *(this->_factoryIdManagerMap);
 	}
 
 	Entity& CoreFactory::getNewEntity() {
@@ -58,11 +51,6 @@ namespace engine {
 	void CoreFactory::deleteEntity(id_type &id) {
 		this->_factoryIdManagerEntity->freeId(_entities.at(id)->getId());
 		delete(_entities[id]);
-	}
-
-	void CoreFactory::deleteMap(id_type &id) {
-		//this->_factoryIdManagerMap->freeId(_maps[id]->getEntityId());
-		//delete(_maps[id]);
 	}
 
 	CoreFactory::~CoreFactory() {

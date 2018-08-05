@@ -25,20 +25,22 @@
 namespace engine {
 namespace backend_sfml {
 
-	class CSpriteSFML : public ICSprite<std::shared_ptr<sf::Sprite*>> {
+	class CSpriteSFML : public ICSprite<std::shared_ptr<sf::Sprite>> {
 	public:
 		CSpriteSFML() {
 			this->_sprite = nullptr;
 		}
 
-		virtual std::shared_ptr<sf::Sprite*> getSprite();
+		virtual std::shared_ptr<sf::Sprite> getSprite();
 		
 		virtual void loadSprite(std::string path);
 		
 		virtual void loadSprite(std::string path, vector_float ratio);
 
+		virtual void update(float_64 dt);
+
 	private:
-		std::shared_ptr<sf::Sprite*> _sprite;
+		std::shared_ptr<sf::Sprite> _sprite;
 	};
 
 }

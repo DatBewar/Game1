@@ -32,4 +32,8 @@ namespace engine {
 		Core::m_instance = this;
 		this->_graphicBackend = gb;
 	}
+
+	void Core::update() {
+
+	}
 }

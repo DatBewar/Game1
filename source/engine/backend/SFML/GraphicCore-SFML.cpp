@@ -31,8 +31,8 @@ namespace backend_sfml {
 		this->_window.close();
 	}
 
-	void GraphicCoreSFML::draw(sf::Sprite *s) {
-		this->_window.draw(*s);
+	void GraphicCoreSFML::draw(std::shared_ptr<sf::Sprite> s) {
+		this->_window.draw(*s.get());
 	}
 }
 }

@@ -24,7 +24,7 @@
 namespace engine {
 	class CDisplacement : public IComponent {
 	public:
-		virtual void update(float_32 dt);
+		virtual void update(float_64 dt);
 		~CDisplacement() = default;
 	private:
 	};

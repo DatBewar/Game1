@@ -24,6 +24,6 @@ namespace engine {
 		IComponent();
 		virtual ~IComponent() {};
 
-		virtual void update(float_32 dt) = 0;
+		virtual void update(float_64 dt) = 0;
 	};
 }

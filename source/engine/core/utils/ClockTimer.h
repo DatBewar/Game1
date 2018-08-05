@@ -1,5 +1,5 @@
 /*
-* Environment.h
+* ClockTimer.h
 * Copyright (C) 2018 Croze Erwan
 *
 * This program is free software : you can redistribute it and/or modify
@@ -18,39 +18,35 @@
 
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include <chrono>
 
-#include "core/utils/Types.h"
+#include <core/utils/Types.h>
 
-namespace map {
-	enum EnvType {
-		plain,
-		forest,
-		building
+namespace engine {
+
+	enum timer_status {
+		RUNNING,
+		PAUSED,
+		STOPPED
 	};
 
-	class Environment {
-	private:
-		EnvType _type;
-		int_16 _attackModifier;
-		int_16 _defenseModifier;
-
+	class ClockTimer {
 	public:
-		Environment();
-		Environment(EnvType t);
-		Environment(int_16 attack, int_16 defense);
-		Environment(EnvType t, int_16 attack, int_16 defense);
+		ClockTimer() = default;
+		~ClockTimer() = default;
 
-		EnvType getEnvType() {
-			return this->_type;
-		}
+		void start();
+		void pause();
+		void stop();
 
-		int_16 getAttackModifier() {
-			return this->_attackModifier;
-		}
+		float_64 getCurrentTime();
 
-		int_16 getDefenseModifier() {
-			return this->_defenseModifier;
-		}
+		float_64 getElapsedTime();
+
+	private:
+		timer_status _status = timer_status::STOPPED;
+		std::chrono::high_resolution_clock::time_point _startTime = std::chrono::high_resolution_clock::now();
+		std::chrono::high_resolution_clock::time_point _pauseTime;
+		std::chrono::high_resolution_clock::time_point _stopTime;
 	};
 }

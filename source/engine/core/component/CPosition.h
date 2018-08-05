@@ -24,7 +24,7 @@
 namespace engine {
 	class CPosition : public IComponent {
 	public:
-		virtual void update(float_32 dt);
+		virtual void update(float_64 dt);
 		~CPosition() = default;
 	private:
 	};

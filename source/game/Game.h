@@ -34,7 +34,7 @@ private:
 
 	// Core
 	engine::CoreFactory _coreFactory;
-	engine::Core _core;
+	engine::Core *_core;
 
 	// System
 	//engine::IGraphicCore *_graphicSystem;
@@ -47,7 +47,7 @@ private:
 
 public:
 
-	Game() {};
+	Game() = default;
 
 	/*
 	* Routine

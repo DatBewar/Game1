@@ -31,6 +31,9 @@ namespace engine {
 
 	public:
 		static Core& instance();
+
+		void update();
+
 		Core();
 		Core(graphic_backend);
 	};

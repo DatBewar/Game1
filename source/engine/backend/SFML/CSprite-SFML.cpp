@@ -21,7 +21,7 @@
 namespace engine {
 namespace backend_sfml {
 
-	std::shared_ptr<sf::Sprite*> CSpriteSFML::getSprite() {
+	std::shared_ptr<sf::Sprite> CSpriteSFML::getSprite() {
 		return this->_sprite;
 	}
 
@@ -33,5 +33,8 @@ namespace backend_sfml {
 
 	}
 
+	void CSpriteSFML::update(float_64 dt) {
+		// TODO animation
+	}
 }
 }
