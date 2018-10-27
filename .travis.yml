@@ -9,7 +9,7 @@ compiler:
   - clang
 
 install:
-  - sudo apt-get install g++-5
+  - sudo apt-get install gcc-5
 
 before_script:
   - mkdir build

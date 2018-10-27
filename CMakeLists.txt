@@ -10,7 +10,7 @@ set(DEPENDENCIES_DIR "${PROJECT_DIR}/dependencies")
 set(SOURCE_DIR "${PROJECT_DIR}/source")
 set(PROJECT_PREFIX "${OUTPUT_DIR}/PREFIX")
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -std=c++11")
 
 #Project output
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPUT_DIR}/bin")
