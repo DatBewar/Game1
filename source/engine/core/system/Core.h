@@ -19,22 +19,26 @@
 #pragma once
 
 #include <core/utils/Types.h>
+#include <core/utils/ClockTimer.h>
 
 namespace engine {
 	class Core {
 	private:
 		static Core m_instance;
-		graphic_backend getGraphicBackend() {
-			return this->_graphicBackend;
-		};
+
 		graphic_backend _graphicBackend;
+		ClockTimer _coreTime;
 
 	public:
 		static Core& instance();
 
-		void update();
-
 		Core();
 		Core(graphic_backend);
+
+		void update();
+
+		graphic_backend getGraphicBackend() {
+			return this->_graphicBackend;
+		}
 	};
 }

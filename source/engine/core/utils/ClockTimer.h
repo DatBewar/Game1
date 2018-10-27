@@ -39,6 +39,8 @@ namespace engine {
 		void pause();
 		void stop();
 
+		timer_status getStatus();
+
 		float_64 getCurrentTime();
 
 		float_64 getElapsedTime();
@@ -46,7 +48,7 @@ namespace engine {
 	private:
 		timer_status _status = timer_status::STOPPED;
 		std::chrono::high_resolution_clock::time_point _startTime = std::chrono::high_resolution_clock::now();
+		std::chrono::high_resolution_clock::time_point _stopTime = std::chrono::high_resolution_clock::now();
 		std::chrono::high_resolution_clock::time_point _pauseTime;
-		std::chrono::high_resolution_clock::time_point _stopTime;
 	};
 }

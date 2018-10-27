@@ -8,12 +8,8 @@ compiler:
   - gcc
   - clang
 
-addons:
-  apt:
-    sources:
-      - debian-sid
-    packages:
-      - libsfml-dev
+install:
+  - sudo apt-get install libsfml-dev
 
 before_script:
   - mkdir build

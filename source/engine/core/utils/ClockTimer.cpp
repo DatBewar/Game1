@@ -34,6 +34,10 @@ namespace engine {
 		this->_status = timer_status::STOPPED;
 	}
 
+	timer_status ClockTimer::getStatus() {
+		return this->_status;
+	}
+
 	float_64 ClockTimer::getCurrentTime() {
 		std::chrono::duration<float_64> now = std::chrono::high_resolution_clock::now().time_since_epoch();
 		return now.count();

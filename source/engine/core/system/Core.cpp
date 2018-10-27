@@ -34,6 +34,6 @@ namespace engine {
 	}
 
 	void Core::update() {
-
+		if (this->_coreTime.getStatus() == timer_status::STOPPED) this->_coreTime.start();
 	}
 }
