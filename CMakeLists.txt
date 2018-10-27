@@ -17,17 +17,21 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPUT_DIR}/bin")
 
 ### DEPENDANCIES ###
 # SFML
-if(WIN32)
-	set(SFML_DIR "${DEPENDENCIES_DIR}/SFML-2.5.0/lib/cmake/SFML")
-	if(NOT EXISTS "${DEPENDENCIES_DIR}/SFML-2.5.0")
-		file(DOWNLOAD "https://www.sfml-dev.org/files/SFML-2.5.0-windows-vc15-32-bit.zip" "${DEPENDENCIES_DIR}/SFML_WIN.zip")
+set(SFML_DIR "${DEPENDENCIES_DIR}/SFML-2.5.1/lib/cmake/SFML")
+if(NOT EXISTS "${DEPENDENCIES_DIR}/SFML-2.5.1")
+	if(WIN32)
+		file(DOWNLOAD "https://www.sfml-dev.org/files/SFML-2.5.1-windows-vc15-32-bit.zip" "${DEPENDENCIES_DIR}/SFML.zip")
 		execute_process(
 			WORKING_DIRECTORY "${PROJECT_DIR}/dependencies/"
-			COMMAND unzip SFML_WIN.zip
-		)
+			COMMAND unzip SFML.zip)
+	else()
+		file(DOWNLOAD "https://www.sfml-dev.org/files/SFML-2.5.1-linux-gcc-64-bit.tar.gz" "${DEPENDENCIES_DIR}/SFML.tar.gz")
+		execute_process(
+			WORKING_DIRECTORY "${PROJECT_DIR}/dependencies/"
+			COMMAND  tar -xzf SFML.tar.gz)
 	endif()
-	set(OTHER_INCLUDE_H "${DEPENDENCIES_DIR}/SFML-2.5.0/include")
 endif()
+set(OTHER_INCLUDE_H "${DEPENDENCIES_DIR}/SFML-2.5.0/include")
 find_package(SFML 2.5 COMPONENTS system window graphics network audio)
 if(NOT SFML_FOUND)
 	message(FATAL_ERROR "You need SFML library")
