@@ -71,7 +71,7 @@ add_library(
 target_compile_features(
 	engine-lib
 	PUBLIC
-	cxx_std_17)
+	cxx_std_14)
 
 target_include_directories(
 	engine-lib
