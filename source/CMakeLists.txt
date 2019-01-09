@@ -2,7 +2,7 @@ project(GAME1 CXX)
 
 set(BIN_NAME "game1")
 #Compilation flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -lsfml-graphics -lsfml-window -lsfml-system")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -Wall -lsfml-graphics -lsfml-window -lsfml-system")
 
 # Include
 set(
@@ -73,6 +73,11 @@ add_library(
 	${BACKEND_HEADERS}
 	${BACKEND_SOURCES}
 )
+
+target_compile_features(
+	engine-lib
+	PUBLIC
+	cxx_std_17)
 
 target_include_directories(
 	engine-lib

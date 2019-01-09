@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(GAME1 CXX)
 include(ExternalProject)
 
 #Project directories
@@ -9,8 +8,6 @@ set(OUTPUT_DIR "${PROJECT_DIR}/OUTPUT")
 set(DEPENDENCIES_DIR "${PROJECT_DIR}/dependencies")
 set(SOURCE_DIR "${PROJECT_DIR}/source")
 set(PROJECT_PREFIX "${OUTPUT_DIR}/PREFIX")
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -std=c++11")
 
 #Project output
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPUT_DIR}/bin")
@@ -32,10 +29,8 @@ if(NOT EXISTS "${DEPENDENCIES_DIR}/SFML-2.5.1")
 	endif()
 endif()
 set(OTHER_INCLUDE_H "${DEPENDENCIES_DIR}/SFML-2.5.0/include")
-find_package(SFML 2.5 COMPONENTS system window graphics network audio)
-if(NOT SFML_FOUND)
-	message(FATAL_ERROR "You need SFML library")
-endif()
+find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
+
 ###################
 
 ### ENGINE ###
