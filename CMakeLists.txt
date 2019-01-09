@@ -28,7 +28,7 @@ if(NOT EXISTS "${DEPENDENCIES_DIR}/SFML-2.5.1")
 			COMMAND  tar -xzf SFML.tar.gz)
 	endif()
 endif()
-set(OTHER_INCLUDE_H "${DEPENDENCIES_DIR}/SFML-2.5.0/include")
+set(OTHER_INCLUDE_H "${DEPENDENCIES_DIR}/SFML-2.5.1/include")
 find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
 
 ###################

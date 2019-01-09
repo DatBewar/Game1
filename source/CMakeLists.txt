@@ -15,12 +15,6 @@ set(
 	"${SOURCE_DIR}/game"
 )
 
-include_directories(
-	${OTHER_INCLUDE_H}
-	${ENGINE_INCLUDE_H}
-	${GAME_INCLUDE_H}
-)
-
 if(SFML_FOUND)
 	set(BACKEND_HEADERS
 		${BACKEND_HEADERS}
@@ -83,6 +77,8 @@ target_include_directories(
 	engine-lib
 	PUBLIC
 	${ENGINE_INCLUDE_H}
+	${OTHER_INCLUDE_H}
+	${GAME_INCLUDE_H}
 )
 
 add_executable(
